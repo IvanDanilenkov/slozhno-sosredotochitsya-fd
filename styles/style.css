@@ -1,5 +1,178 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+  font-weight: 700;
+}
+
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 375px;
+  padding: var(--page-gap);
+  color: var(--text-color, #f1b2ce);
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+  font-weight: 400;
+  font-size: var(--text-size);
+  line-height: 23.4px;
+  background-image: var(--bg-image);
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-auto-rows: 1fr min-content 1fr;
+  justify-items: end;
+  align-items: start;
+  gap: 55px;
+  height: min(100vh, 668px);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
+}
+
+.theme_dark .rec {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--accent-color, #ff0070);
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.theme_dark .rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0px 0px 4px 2px var(--accent-color, #ff0070);
+
+}
+
+.header__theme-menu {
+  align-self: flex-end;
+  color: var(--accent-color, #ff0070);
+  padding-inline-end: 7px;
+  padding-block-end: 13px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.header__theme-menu-button {
+  border: none;
+  line-height: 18px;
+  background-color: transparent;
+  text-transform: lowercase;
+}
+
+.title {
+  color: var(--title-color, #db00ff);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+.subtitle {
+  padding: 10px 0;
+}
+
+.section {
+  width: 100%;
+}
+
+.text {
+  color: currentColor;
+  font-family: inherit;
+  padding-bottom: 10px;
+}
+
+.text-links {
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+.section__title {
+  color: var(--accent-color, #ff0070);
+  font-family: inherit;
+  font-size: var(--text-size);
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.title-decor {
+  color: var(--accent-color-text, #000028);
+  background-color: var(--accent-color, #ff0070);
+  background-clip: content-box;
+}
+
+.images {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.section__title-images {
+  padding-top: 38px;
+  padding-bottom: 10px;
+}
+
+.section__images-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.footer {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  min-block-size: 668px;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
 }
