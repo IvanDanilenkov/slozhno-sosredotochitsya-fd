@@ -12,8 +12,6 @@ h6 {
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  display: grid;
-  grid-template-columns: 1fr;
   width: 100%;
   max-width: 375px;
   padding: var(--page-gap);
@@ -180,6 +178,16 @@ h6 {
   background-clip: content-box;
 }
 
+.section__five-advices {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.subtitle-five-advices {
+  padding: 8px 0 10px 0;
+}
+
 .images {
   display: block;
   width: 100%;
@@ -188,7 +196,7 @@ h6 {
 }
 
 .section__title-images {
-  padding-top: 38px;
+  padding-top: 40px;
   padding-bottom: 10px;
 }
 
