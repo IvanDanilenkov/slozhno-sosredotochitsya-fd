@@ -4,10 +4,15 @@
 */
 :root {
   --bg-image: url(../images/cover-image-dark.png);
-  --accent-color: #FF0070;
+  --bg-color: #000028;
+  --accent-color: #ff0070;
   --accent-color-text: #000028;
-  --title-color: #DB00FF;
-  --text-color: #F1B2CE;
+  --title-color: #db00ff;
+  --text-color: #f1b2ce;
+  --subtitle-color: #ff0070;
+  --subtitle-accent-color: #000028;
+  --nav-color: #ff0070;
+  --border-color: #ff007066;
   --main-font: "IBM Plex Mono";
   --page-gap: 0 10px;
   --text-size: 18px;
@@ -15,6 +20,6 @@
 
 @media (width >= 768px) {
   :root {
-  --page-gap: 0 20px;
+    --page-gap: 0 20px;
   }
 }

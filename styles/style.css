@@ -17,13 +17,13 @@ h6 {
   width: 100%;
   max-width: 375px;
   padding: var(--page-gap);
-  color: var(--text-color, #f1b2ce);
+  color: var(--text-color);
   font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
   font-weight: 400;
   font-size: var(--text-size);
   line-height: 23.4px;
-  background-image: var(--bg-image);
   background-color: var(--accent-color-text);
+  background-image: var(--bg-image);
   background-position: center;
   background-attachment: fixed;
 }
@@ -31,10 +31,9 @@ h6 {
 .header {
   display: grid;
   grid-auto-rows: 1fr min-content 1fr;
-  justify-items: end;
-  align-items: start;
-  gap: 55px;
+  align-items: center;
   height: min(100vh, 668px);
+  padding: 10px 0;
 }
 
 .decorated-zone {
@@ -48,8 +47,8 @@ h6 {
   right: 0px;
   width: 25px;
   height: 25px;
-  border-top: 1px solid var(--accent-color, #ff0070);
-  border-right: 1px solid var(--accent-color, #ff0070);
+  border-top: 1px solid var(--nav-color);
+  border-right: 1px solid var(--nav-color);
 }
 
 .decorated-zone::after {
@@ -59,15 +58,17 @@ h6 {
   left: 0px;
   width: 25px;
   height: 25px;
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-  border-left: 1px solid var(--accent-color, #ff0070);
+  border-bottom: 1px solid var(--nav-color);
+  border-left: 1px solid var(--nav-color);
 }
 
 .theme_dark .rec {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--accent-color, #ff0070);
+  display: flex;
+  align-items: center;
+  color: var(--accent-color);
   font-family: inherit;
   font-size: 18px;
   line-height: 25px;
@@ -78,41 +79,59 @@ h6 {
   display: inline-block;
   width: 9px;
   height: 9px;
-  margin-left: 11px;
+  margin-left: 9px;
   border-radius: 50%;
-  background-color: var(--accent-color, #ff0070);
-  box-shadow: 0px 0px 4px 2px var(--accent-color, #ff0070);
-
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .header__theme-menu {
-  align-self: flex-end;
-  color: var(--accent-color, #ff0070);
-  padding-inline-end: 7px;
-  padding-block-end: 13px;
+  justify-self: end;
+  color: var(--nav-color);
 }
 
 .header__theme-menu-list {
   display: flex;
-  gap: 12px;
   flex-direction: column;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
   border: none;
   line-height: 18px;
-  background-color: transparent;
   text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+  min-inline-size: 70px;
+  min-block-size: 26px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--nav-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--nav-color);
+  pointer-events: none;
 }
 
 .title {
-  color: var(--title-color, #db00ff);
+  color: var(--title-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
 }
 
 .header__title {
-  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .subtitle {
@@ -124,34 +143,46 @@ h6 {
 }
 
 .text {
+  padding-bottom: 10px;
   color: currentColor;
   font-family: inherit;
-  padding-bottom: 10px;
 }
 
 .text-links {
-  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.text-links:hover {
+  border-bottom: 2px solid var(--text-color);
+}
+
+.text-links:focus {
+  outline: none;
+}
+
+.text-links:focus-visible {
+  outline: 1px solid var(--text-color);
 }
 
 .section__title {
-  color: var(--accent-color, #ff0070);
-  font-family: inherit;
-  font-size: var(--text-size);
   padding-top: 40px;
   padding-bottom: 10px;
+  color: var(--subtitle-color);
+  font-family: inherit;
+  font-size: var(--text-size);
 }
 
 .title-decor {
-  color: var(--accent-color-text, #000028);
-  background-color: var(--accent-color, #ff0070);
+  color: var(--subtitle-accent-color);
+  background-color: var(--accent-color);
   background-clip: content-box;
 }
 
 .images {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .section__title-images {
@@ -166,14 +197,14 @@ h6 {
 }
 
 .footer {
-  margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
   justify-items: center;
+  align-items: center;
+  margin-top: 40px;
   min-block-size: 668px;
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
