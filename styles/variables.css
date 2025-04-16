@@ -4,11 +4,17 @@
 */
 :root {
   --bg-image: url(../images/cover-image-dark.png);
-  --main-font: "IBM Plex Mono";
   --accent-color: #FF0070;
   --accent-color-text: #000028;
   --title-color: #DB00FF;
   --text-color: #F1B2CE;
+  --main-font: "IBM Plex Mono";
   --page-gap: 0 10px;
   --text-size: 18px;
+}
+
+@media (width >= 768px) {
+  :root {
+  --page-gap: 0 20px;
+  }
 }

@@ -23,6 +23,7 @@ h6 {
   font-size: var(--text-size);
   line-height: 23.4px;
   background-image: var(--bg-image);
+  background-color: var(--accent-color-text);
   background-position: center;
   background-attachment: fixed;
 }
@@ -77,7 +78,7 @@ h6 {
   display: inline-block;
   width: 9px;
   height: 9px;
-  margin-left: 4px;
+  margin-left: 11px;
   border-radius: 50%;
   background-color: var(--accent-color, #ff0070);
   box-shadow: 0px 0px 4px 2px var(--accent-color, #ff0070);
@@ -148,7 +149,7 @@ h6 {
 
 .images {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
