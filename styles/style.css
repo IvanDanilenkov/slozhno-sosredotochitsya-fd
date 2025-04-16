@@ -62,7 +62,7 @@ h6 {
   border-left: 1px solid var(--nav-color);
 }
 
-.theme_dark .rec {
+.rec {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -75,9 +75,9 @@ h6 {
   line-height: 25px;
 }
 
-.theme_dark .rec::after {
+.rec::after {
   content: "";
-  display: inline-block;
+  display: flex;
   width: 9px;
   height: 9px;
   border-radius: 50%;

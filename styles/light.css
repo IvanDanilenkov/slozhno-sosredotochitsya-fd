@@ -25,6 +25,10 @@
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
+.theme-light .rec {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --bg-image: url(../images/cover-image-light.png);
@@ -38,8 +42,7 @@
     --nav-color: #353430;
     --border-color: #35343066;
   }
-}
-
-.theme-light .rec {
-  display: none;
+  .rec {
+    display: none;
+  }
 }

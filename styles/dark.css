@@ -21,6 +21,10 @@
   --border-color: #ff007066;
 }
 
+.theme-dark .rec {
+  display: flex;
+}
+
 .theme-dark .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
