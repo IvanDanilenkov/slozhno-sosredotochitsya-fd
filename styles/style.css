@@ -20,7 +20,7 @@ h6 {
   font-weight: 400;
   font-size: var(--text-size);
   line-height: 23.4px;
-  background-color: var(--accent-color-text);
+  background: var(--bg-color);
   background-image: var(--bg-image);
   background-position: center;
   background-attachment: fixed;
@@ -63,7 +63,7 @@ h6 {
 .rec {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 9px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -251,7 +251,7 @@ h6 {
     padding-left: 11px;
   }
 
-  .theme_dark .rec {
+  .rec {
     top: 20px;
     right: 29px;
   }
