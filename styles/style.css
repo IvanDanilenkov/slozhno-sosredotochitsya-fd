@@ -136,6 +136,8 @@ h6 {
 
 .subtitle {
   padding: 10px 0;
+  font-size: var(--text-size);
+  font-weight: 400;
 }
 
 .section {
