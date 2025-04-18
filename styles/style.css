@@ -3,20 +3,16 @@
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+h4 {
   font-weight: 700;
 }
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   width: 100%;
-  max-width: 375px;
   padding: var(--page-gap);
   color: var(--text-color);
-  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono"), monospace;
   font-weight: 400;
   font-size: var(--text-size);
   line-height: 23.4px;
@@ -135,17 +131,17 @@ h6 {
 }
 
 .subtitle {
-  padding: 10px 0;
+  padding-block-start: 10px;
+  padding-block-end: 10px;
   font-size: var(--text-size);
-  font-weight: 400;
 }
 
 .section {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .text {
-  padding-bottom: 10px;
+  padding-block-end: 10px;
   color: currentColor;
   font-family: inherit;
 }
@@ -155,7 +151,7 @@ h6 {
 }
 
 .text-links:hover {
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text-links:focus {
@@ -167,8 +163,8 @@ h6 {
 }
 
 .section__title {
-  padding-top: 40px;
-  padding-bottom: 10px;
+  padding-block-start: 40px;
+  padding-block-end: 10px;
   color: var(--subtitle-color);
   font-family: inherit;
   font-size: var(--text-size);
@@ -180,14 +176,21 @@ h6 {
   background-clip: content-box;
 }
 
-.section__five-advices {
+.section__advices {
   display: flex;
   flex-direction: column;
-  gap: 1px;
 }
 
-.subtitle-five-advices {
-  padding: 8px 0 10px 0;
+.subtitle-advices {
+  padding-block-start: 10px;
+  padding-block-end: 10px;
+  font-size: var(--text-size);
+}
+
+.article__subtitle-advices {
+  padding-block-start: 10px;
+  padding-block-end: 10px;
+  font-weight: 400;
 }
 
 .images {
@@ -195,11 +198,13 @@ h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .section__title-images {
-  padding-top: 40px;
-  padding-bottom: 10px;
+  padding-block-start: 40px;
+  padding-block-end: 10px;
+  font-size: var(--text-size);
 }
 
 .section__images-list {
@@ -213,8 +218,8 @@ h6 {
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
+  height: min(100vh, 668px);
   margin-top: 40px;
-  min-block-size: 668px;
 }
 
 .footer__title {
@@ -225,13 +230,11 @@ h6 {
 /* Стили для шапки сайта */
 @media (width >= 768px) {
   .page {
-    max-width: 768px;
     padding: 0;
   }
 
   .header {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr min-content 1fr;
     height: min(100vh, 1024px);
     padding: 20px 20px 20px 0;
   }
@@ -244,13 +247,12 @@ h6 {
   .header__title {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
-    justify-self: flex-start;
   }
 
-  .header__subtitle {
+  .header__text {
     grid-column: 2 / 3;
     align-self: center;
-    padding-left: 11px;
+    padding-inline-start: 11px;
   }
 
   .rec {
@@ -271,10 +273,8 @@ h6 {
   .title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-}
 
-/* Стили для первой секции главного контента */
-@media (width >= 768px) {
+  /* Стили для первой секции главного контента */
   .main {
     padding: var(--page-gap);
   }
@@ -283,7 +283,7 @@ h6 {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
-    padding-top: 60px;
+    padding-block-start: 60px;
   }
 
   .section__title {
@@ -291,48 +291,42 @@ h6 {
     inline-size: 236px;
   }
 
-  .content-concentration-text h4:first-of-type {
-    padding-top: 0;
+  .content-concentration-text h3:first-of-type {
+    padding-block-start: 0;
   }
-}
 
-/* Стили для второй секции главного контекта */
-@media (width >= 768px) {
+  /* Стили для второй секции главного контекта */
   .section__content-attention {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    padding-top: 70px;
+    padding-block-start: 70px;
   }
-}
 
-/* Стили для третьей секции глаыного контента */
-@media (width >= 768px) {
-  .section__five-advices {
+  /* Стили для третьей секции глаыного контента */
+  .section__advices {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
     padding-block-start: 70px;
   }
 
-  .section__five-advices h4:nth-of-type(1) {
+  .section__advices h3:nth-of-type(1) {
     padding-block-start: 0;
   }
-}
 
-/* Стили для секции с фото */
-@media (width >= 768px) {
+  /* Стили для секции с фото */
   .section__images-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
   .section__title-images {
-    padding-top: 69px;
-    padding-bottom: 20px;
+    padding-block-start: 69px;
+    padding-block-end: 20px;
   }
 
-  .imade-sunset {
+  .image-sunset {
     grid-column: 1 / 3;
   }
 
@@ -350,23 +344,17 @@ h6 {
     grid-column: 2 / 4;
     grid-row: 3;
   }
-}
 
-/* Стлили для футера */
-@media (width >= 768px) {
+  /* Стлили для футера */
   .footer {
+    height: min(100vh, 1024px);
     margin-top: 60px;
-    min-block-size: 1024px;
   }
 }
 
 /* Брекпоинт для разрешения 1024px */
 /* Стили для шапки сайта */
 @media (width >= 1024px) {
-  .page {
-    max-width: 1024px;
-  }
-
   .header {
     height: min(100vh, 768px);
   }
@@ -375,16 +363,14 @@ h6 {
     grid-column: 1 / 3;
     justify-self: center;
     align-self: self-start;
-    padding-left: 20px;
+    padding-inline-start: 20px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
   }
-}
 
-/* Стили для первой секции главного контента */
-@media (width >= 1024px) {
+  /* Стили для секциЙ главного контента */
   .section__content-concentration {
     gap: 10px;
   }
@@ -403,14 +389,12 @@ h6 {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
-  .section__five-advices {
+  .section__advices {
     gap: 10px;
   }
-}
 
-/* Стлили для футера */
-@media (width >= 1024px) {
+  /* Стлили для футера */
   .footer {
-    min-block-size: 768px;
+    height: min(100vh, 768px);
   }
 }

@@ -21,10 +21,6 @@
   --border-color: #35343066;
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-}
-
 .theme-light .rec {
   display: none;
 }
