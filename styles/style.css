@@ -130,6 +130,10 @@ h4 {
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
+.header__text {
+  font-weight: 700;
+}
+
 .subtitle {
   padding-block-start: 10px;
   padding-block-end: 10px;
@@ -181,15 +185,11 @@ h4 {
   flex-direction: column;
 }
 
-.subtitle-advices {
-  padding-block-start: 10px;
-  padding-block-end: 10px;
-  font-size: var(--text-size);
+.section__advices h3:nth-of-type(1) {
+  padding-block-start: 9px;
 }
 
-.article__subtitle-advices {
-  padding-block-start: 10px;
-  padding-block-end: 10px;
+.section__advices h4 {
   font-weight: 400;
 }
 
@@ -252,7 +252,7 @@ h4 {
   .header__text {
     grid-column: 2 / 3;
     align-self: center;
-    padding-inline-start: 11px;
+    padding-inline-start: 10px;
   }
 
   .rec {
@@ -291,10 +291,10 @@ h4 {
     inline-size: 236px;
   }
 
-  .content-concentration-text h3:first-of-type {
+  .content-concentration-text .card:first-of-type .subtitle {
     padding-block-start: 0;
   }
-
+  
   /* Стили для второй секции главного контекта */
   .section__content-attention {
     display: grid;
