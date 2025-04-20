@@ -185,11 +185,11 @@ h4 {
   flex-direction: column;
 }
 
-.section__advices h3:nth-of-type(1) {
+.section__advices article:first-of-type h3:first-of-type {
   padding-block-start: 9px;
 }
 
-.section__advices h4 {
+.section__advices article h3 {
   font-weight: 400;
 }
 
@@ -287,14 +287,17 @@ h4 {
   }
 
   .section__title {
-    padding: 0;
     inline-size: 236px;
+  }
+
+  .no-padding-title {
+    padding: 0;
   }
 
   .content-concentration-text .card:first-of-type .subtitle {
     padding-block-start: 0;
   }
-  
+
   /* Стили для второй секции главного контекта */
   .section__content-attention {
     display: grid;
@@ -311,8 +314,8 @@ h4 {
     padding-block-start: 70px;
   }
 
-  .section__advices h3:nth-of-type(1) {
-    padding-block-start: 0;
+  .section__advices article:first-of-type h3:first-of-type {
+    padding-block-start: 20px;
   }
 
   /* Стили для секции с фото */
